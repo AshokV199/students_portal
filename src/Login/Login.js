@@ -5,27 +5,29 @@ import AVATAR from '../Assets/avatar.svg';
 import WAVE from '../Assets/wave.png';
 
 function Login() {
-  const inputs = document.querySelectorAll(".input");
 
+// const inputs = document.querySelectorAll(".input");
+//
+// function addcl(){
+// 	let parent = this.parentNode.parentNode;
+// 	parent.classList.add("focus");
+// }
+// function remcl(){
+// 	let parent = this.parentNode.parentNode;
+// 	if(this.value === ""){
+// 		parent.classList.remove("focus");
+// 	}
+// }
+//
+//
+// inputs.forEach(input => {
+// 	input.addEventListener("focus", addcl);
+// 	input.addEventListener("blur", remcl);
+// });
 
-function addcl(){
-	let parent = this.parentNode.parentNode;
-	parent.classList.add("focus");
+const interaction=(event)=>{
+	console.log('ev',event.parentNode);
 }
-
-function remcl(){
-	let parent = this.parentNode.parentNode;
-	if(this.value === ""){
-		parent.classList.remove("focus");
-	}
-}
-
-
-inputs.forEach(input => {
-	input.addEventListener("focus", addcl);
-	input.addEventListener("blur", remcl);
-});
-
   return (
     <div className="App">
     <img className="wave" src={WAVE} alt="wave"/>
@@ -43,7 +45,7 @@ inputs.forEach(input => {
                    </div>
                    <div className="div">
                       <h5>Username</h5>
-                      <input type="text" className="input"></input>
+                      <input type="text" id="username" className="input" autoComplete="true" onClick={events=>interaction(events)}></input>
                    </div>
                 </div>
                 <div className="input-div pass">
@@ -52,7 +54,7 @@ inputs.forEach(input => {
                    </div>
                    <div className="div">
                       <h5>Password</h5>
-                      <input type="password" className="input"></input>
+                      <input type="password" id="password" className="input" autoComplete="true" onClick={events=>interaction(events)}></input>
                    </div>
                 </div>
                 <a href="login">Forgot Password?</a>
